@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  height: 100vh;
+  margin: 0 auto; /*all our rows will be centered*/
+}
+body{
+  /*background-image: url("http://static.hdw.eweb4.com/media/wallpapers_2560x1600/photography/1/1/morning-dew-on-the-grass-photography-hd-wallpaper-2560x1600-6979.jpg");*/
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Lato, Arial;
+  max-width: 1500px; /*this is the only value that is absolute and in px*/
+  color: #fff;
+  /*vertical/horizontal centering of container div*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
