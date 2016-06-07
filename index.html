@@ -3,16 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <title>Martin Maza | Twitch!</title>
-        <meta name="description" content="">
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,300italic' rel='stylesheet' type='text/css'>
-        <link rel="icon" type="image/png" sizes="16x16" href="img/android-icon-192x192.png"> 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">  
+      <meta name="description" content="">
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,300italic' rel='stylesheet' type='text/css'>
+      <link rel="icon" type="image/png" sizes="16x16" href="img/android-icon-192x192.png"> 
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">  
   </head>
   <body>
-  <div class="container">
-        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <table border="1" id="twitch">
+      <tr>
+        <th>User / Channel</th>
+        <th>Status</th> 
+      </tr>
+      <tr>
+        <td id="user">Eve</td>
+        <td id="statuser">Jackson</td> 
+      </tr>
+      <tr>
+        <td id="user-div">
+          <p id="username"></p>
+          <p id="streaming"></p>
+        </td>
+        <td id="status">Jackson</td> 
+      </tr>
+    </table>
+      <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
       <script src="js/script.js"></script>
-  </div>
   </body>
-  </html>
+</html>
