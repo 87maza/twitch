@@ -10,23 +10,20 @@
       <link rel="stylesheet" href="css/style.css">  
   </head>
   <body>
-    <table border="1" id="twitch">
-      <tr>
-        <th>User / Channel</th>
-        <th>Status</th> 
-      </tr>
-      <tr>
-        <td id="user">Eve</td>
-        <td id="statuser">Jackson</td> 
-      </tr>
-      <tr>
-        <td id="user-div">
-          <p id="username"></p>
-          <p id="streaming"></p>
-        </td>
-        <td id="status">Jackson</td> 
-      </tr>
-    </table>
+    <div class="flexbox-container">
+      <div id="user">
+        <h3>User / Channel</h3>
+        <div id="names"></div>
+        <div id='live'></div>
+      </div>
+
+      <div id="status">
+      <h3>Status</h3>
+      <div id="streaming"></div>
+      </div>
+
+    </div>
+
       <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
       <script src="js/script.js"></script>
   </body>

@@ -1,21 +1,41 @@
 var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]
 
-function getStatus(){
+function getRows(){
 	users.map(function(user){
-		function channelAndStatus(link, name){
-			return 'https://api.twitch.tv/kraken/' + link + '/' + name;
-		}
 		$.getJSON({
-		url: "https://api.twitch.tv/kraken/channels/freecodecamp",
+		url: "https://api.twitch.tv/kraken/channels/" + user,
 		dataType: 'jsonp',
 		success: function(data){
-		console.log(data);
-		var user = document.getElementById('username');
-		user.innerHTML = "<a href='" + data.url + "'>" + data.display_name + '</a>';
-	}
-})
+		var names = document.getElementById('names');
+		var p = document.createElement("p");
+		p.innerHTML = "<a href='" + data.url + "'>" + data.display_name + '</a>'
+		names.appendChild(p);
+		}
+		})
+		$.getJSON({
+			url: "https://api.twitch.tv/kraken/streams/" + user,
+			dataType: 'jsonp',
+			success: function(data){
+				console.log(user);
+				console.log(data.stream === null)
+				var status = document.getElementById('status');
+				var streaming = document.getElementById('streaming');
+				var p = document.createElement('p');
+				var live = document.getElementById('live');
+				if(data.stream === null) {
+					p.innerHTML = "<p id='off'> -_- Offline" + "</p>";
+					streaming.appendChild(p);
+				}
+				else{
+					p.innerHTML="<p id='on'>^_^ Streaming Live!" + "</p>";
+					streaming.appendChild(p);
+					// live.innerHTML = '<p>' + data.stream.channel.status +  '</p>';
+					// console.log(data.stream.channel.status)
+					// status.appendChild(p);
+				}
+			}
+		})
 	})
-
 }
 
 
@@ -28,21 +48,3 @@ function getStatus(){
 
 
 
-
-
-
-$.getJSON({
-	url: "https://api.twitch.tv/kraken/streams/hireztv",
-	dataType: 'jsonp',
-	success: function(data){
-		console.log(data);
-		var status = document.getElementById('status');
-		var streaming = document.getElementById('streaming');
-		if(data.stream===null) {
-			status.innerHTML = "<p id='offline'>" + "-_- Offline" + "</p>";
-			return;
-		}
-		status.innerHTML= "<p id='online'>" + "^_^ Streaming Live!" + "</p>";
-		streaming.innerHTML = '<p>' + data.stream.channel.status +  '</p>';
-	}
-})
